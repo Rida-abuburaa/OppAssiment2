@@ -25,11 +25,25 @@ namespace OppAssiment2
             //Can represent real-world entities
 
 
+            //Question2
+            //a) Which class is the parent class?
+            //shipment
+            //b) Which class is the child class?
+            //ExpressShipment
+            //c) What members are inherited by ExpressShipment?
+            //TrakingCode
+            //d) Why is inheritance better than duplicating the same code in multiple classes?
+            //Inheritance is better because it allows code reuse and avoids repeating the same code in multiple classes.
+            //Instead of writing the same properties and methods in different classes, we create a base class that contains the common code, and other classes inherit from it.
 
 
 
+
+
+
+            /*
             //Question 3 practical
-            /*  DeliveryCenter d1 = new DeliveryCenter();
+              DeliveryCenter d1 = new DeliveryCenter();
 
               for (int i = 0; i < 3; i++)
               {
