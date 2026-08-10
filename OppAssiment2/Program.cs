@@ -1,5 +1,8 @@
 ﻿using OppAssiment2.Struct;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Timers;
 using static OppAssiment2.DeliveryHelper;
 
 namespace OppAssiment2
@@ -42,73 +45,110 @@ namespace OppAssiment2
 
 
 
-            /*
+
             //Question 3 practical Assiment2 
-              DeliveryCenter d1 = new DeliveryCenter();
+            /* DeliveryCenter d1 = new DeliveryCenter();
 
-              for (int i = 0; i < 3; i++)
-              {
-                  Console.WriteLine("TrackingCode:");
-                  string tracode = Console.ReadLine();
+             for (int i = 0; i < 3; i++)
+             {
+                 Console.WriteLine("TrackingCode:");
+                 string tracode = Console.ReadLine();
 
-                  Console.WriteLine("Description:");
-                  string desscr = Console.ReadLine();
+                 Console.WriteLine("Description:");
+                 string desscr = Console.ReadLine();
 
-                  Console.WriteLine("Weight:");
-                  decimal wei = decimal.Parse(Console.ReadLine());
+                 Console.WriteLine("Weight:");
+                 decimal wei = decimal.Parse(Console.ReadLine());
 
-                  Console.WriteLine("DeliveryFee:");
-                  decimal dele = decimal.Parse(Console.ReadLine());
+                 Console.WriteLine("DeliveryFee:");
+                 decimal dele = decimal.Parse(Console.ReadLine());
 
-                  Console.WriteLine("City:");
-                  string cit = Console.ReadLine();
+                 Console.WriteLine("City:");
+                 string cit = Console.ReadLine();
 
-                  Console.WriteLine("Street:");
-                  string stree = Console.ReadLine();
+                 Console.WriteLine("Street:");
+                 string stree = Console.ReadLine();
 
-                  Console.WriteLine("Building Number:");
-                  int bnumber = int.Parse(Console.ReadLine());
+                 Console.WriteLine("Building Number:");
+                 int bnumber = int.Parse(Console.ReadLine());
 
-                  DeliveryAddress address = new DeliveryAddress(cit, stree, bnumber);
+                 DeliveryAddress address = new DeliveryAddress(cit, stree, bnumber);
 
-                  Shipment shipment;
+                 Shipment shipment;
 
-                  if (i == 0)
-                  {
-                      // First shipment = Standard
+                 if (i == 0)
+                 {
+                     // First shipment = Standard
 
-                      shipment = new StandardShipment(tracode, desscr, wei, dele, address);
-                  }
-                  else if (i == 1)
-                  {
-                      // Second shipment = Express
-                      Console.WriteLine("ExtraFee:");
-                      decimal extraFee = decimal.Parse(Console.ReadLine());
-
-
-                      shipment = new ExpressShipment(tracode, desscr, wei, dele, address, extraFee);
-                  }
-                  else
-                  {
-                      // Third shipment = International
-                      Console.WriteLine("CustomsFee:");
-                      decimal customsFee = decimal.Parse(Console.ReadLine());
-
-                      shipment = new InternationalShipment(tracode, desscr, wei, dele, address, customsFee);
-                  }
-
-                  if (d1.AddShipment(shipment))
-                  {
-                      Console.WriteLine("Shipment added successfully.");
-                  }
-              }
-
-              Console.WriteLine("------------ All Shipments ------------");
-              d1.PrintAllShipments();*/
+                     shipment = new StandardShipment(tracode, desscr, wei, dele, address);
+                 }
+                 else if (i == 1)
+                 {
+                     // Second shipment = Express
+                     Console.WriteLine("ExtraFee:");
+                     decimal extraFee = decimal.Parse(Console.ReadLine());
 
 
-            //Assiment3 practical****************************************************************************************************************
-           /* Driver driver = new Driver("Ahmed Ali");
+                     shipment = new ExpressShipment(tracode, desscr, wei, dele, address, extraFee);
+                 }
+                 else
+                 {
+                     // Third shipment = International
+                     Console.WriteLine("CustomsFee:");
+                     decimal customsFee = decimal.Parse(Console.ReadLine());
+
+                     shipment = new InternationalShipment(tracode, desscr, wei, dele, address, customsFee);
+                 }
+
+                 if (d1.AddShipment(shipment))
+                 {
+                     Console.WriteLine("Shipment added successfully.");
+                 }
+             }
+
+             Console.WriteLine("------------ All Shipments ------------");
+             d1.PrintAllShipments();*/
+
+
+
+
+
+
+            #region Assiment 3 Part 01 — Theoretical Questions
+       
+            // Q1 Overloading, Overriding, and Binding
+            //a)  What is the difference between Method Overloading and Method Overriding?
+            /* Overloading:
+            -Same method name, different parameters.
+            - Usually in the same class.
+            -Uses virtual/override? No.
+            -Compile-time binding*/
+            /* Overriding:
+                 -Same method signature.
+                 -Requires inheritance.
+                 - Uses virtual + overrid.
+                 -Runtime/dynamic binding.*/
+
+
+            //b)  What is the difference between Static Binding and Dynamic Binding?
+            /* Static Binding:
+                 -Decided at compile time.
+                 - Common with method overloading.
+                 - Based on declared type / arguments.
+                 - Faster / early decision.*/
+          /*  Dynamic Binding:
+                -Decided at runtime.
+                -Common with method overriding.
+                - Based on actual object type.
+                -Runtime decision.*/
+
+
+
+        #endregion
+
+            #region Assiment3 practical****************************************************************************************************************
+
+            /* Driver driver = new Driver("Ahmed Ali");
             DeliveryCenter center = new DeliveryCenter();
             DeliveryAddress address1 = new DeliveryAddress("Cairo", "reda123", 234);
             DeliveryAddress address2 = new DeliveryAddress("Giza", "ahmed456", 567);
@@ -120,9 +160,9 @@ namespace OppAssiment2
             Console.WriteLine(driver.FullName);
             Console.WriteLine("==========================================");
             StandardShipment standard = new StandardShipment("S001", "Laptop", 12m, 10m, address1);
-           
+
             ExpressShipment express = new ExpressShipment("3001","glasses",4m,32m,address2,5m);
-          
+
             InternationalShipment international = new InternationalShipment("1001","Glasses",22m,21m,address3,23m);
             center.AddShipment(standard);
             center.AddShipment(express);
@@ -147,6 +187,10 @@ namespace OppAssiment2
             // cannot override this method.
             PriorityinternationalShipment priority = new PriorityinternationalShipment("1001","kall",2,3,address1,4);
             priority.GenerateCustomsReport();*/
+
+
+
+            #endregion
         }
     }
 }
