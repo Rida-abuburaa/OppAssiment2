@@ -9,7 +9,7 @@ namespace OppAssiment2
         private Shipment[]? shipments = new Shipment[20];
        
         public int CenterName { get; set; }
-
+        public Driver Driver { get; set; }
         // Integer indexer
         public Shipment this[int index]
         {
@@ -57,9 +57,6 @@ namespace OppAssiment2
             return false; // Center is full
         }
 
-
-
-
         public bool RemoveShipment(Shipment shipment)
         {
             for (int i = 0; i < shipments.Length; i++)
@@ -74,7 +71,9 @@ namespace OppAssiment2
             return false; // Shipment not found
         }
 
-        public void PrintAllShipments()
+       
+        //Assiment2
+       /* public void PrintAllShipments()
         {
             for (int i = 0; i < shipments.Length; i++)
             {
@@ -83,6 +82,16 @@ namespace OppAssiment2
                     shipments[i].PrintShipment();
                 }
             }
+        }*/
+
+
+       //Assiment3
+       public void PrintAllShipments()
+       {
+        foreach (Shipment shipment in shipments)
+        {
+            shipment.PrintShipment();
         }
+}
     }
 }

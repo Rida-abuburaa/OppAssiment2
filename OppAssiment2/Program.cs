@@ -1,5 +1,6 @@
 ﻿using OppAssiment2.Struct;
 using System.Security.Cryptography.X509Certificates;
+using static OppAssiment2.DeliveryHelper;
 
 namespace OppAssiment2
 {
@@ -42,7 +43,7 @@ namespace OppAssiment2
 
 
             /*
-            //Question 3 practical
+            //Question 3 practical Assiment2 
               DeliveryCenter d1 = new DeliveryCenter();
 
               for (int i = 0; i < 3; i++)
@@ -104,6 +105,48 @@ namespace OppAssiment2
 
               Console.WriteLine("------------ All Shipments ------------");
               d1.PrintAllShipments();*/
+
+
+            //Assiment3 practical****************************************************************************************************************
+           /* Driver driver = new Driver("Ahmed Ali");
+            DeliveryCenter center = new DeliveryCenter();
+            DeliveryAddress address1 = new DeliveryAddress("Cairo", "reda123", 234);
+            DeliveryAddress address2 = new DeliveryAddress("Giza", "ahmed456", 567);
+            DeliveryAddress address3 = new DeliveryAddress("Alexandria", "mohamed789", 890);
+
+
+
+            center.Driver = driver;
+            Console.WriteLine(driver.FullName);
+            Console.WriteLine("==========================================");
+            StandardShipment standard = new StandardShipment("S001", "Laptop", 12m, 10m, address1);
+           
+            ExpressShipment express = new ExpressShipment("3001","glasses",4m,32m,address2,5m);
+          
+            InternationalShipment international = new InternationalShipment("1001","Glasses",22m,21m,address3,23m);
+            center.AddShipment(standard);
+            center.AddShipment(express);
+            center.AddShipment(international);
+            Shipment[] shipments =
+              {
+              standard,
+              express,
+              international
+             };
+
+            foreach (Shipment shipment in shipments)
+            {
+                shipment.PrintShipment();
+                Console.WriteLine("==========================================");
+            }
+            // CompletedShipment is sealed,
+            // so no class can inherit from it.
+            CompletedShipment completed = new CompletedShipment();
+            // GenerateCustomsReport() is sealed in PriorityInternationalShipment,
+            // so classes derived from PriorityInternationalShipment
+            // cannot override this method.
+            PriorityinternationalShipment priority = new PriorityinternationalShipment("1001","kall",2,3,address1,4);
+            priority.GenerateCustomsReport();*/
         }
     }
 }

@@ -30,10 +30,17 @@ namespace OppAssiment2
         }
 
 
-        public  decimal EstimatedCost
+        public override decimal EstimatedCost
         {
-          get { return base.deliveryFee + (base.weight * 5)+ ExtraFee; }
+          get { return deliveryFee + (weight * 5)+ ExtraFee; }
         }
 
+
+        public override void PrintShipment()
+        {
+            Console.WriteLine("ExpressShipment");
+
+            Console.WriteLine($"TrackingCode :{trackingCode}\n Description:{description}\n Weight:{weight}KG\n ExtraFee:{ExtraFee}\n DeliveryFee:{deliveryFee} EGP\n Cost:{EstimatedCost}");
+        }
     }
 }

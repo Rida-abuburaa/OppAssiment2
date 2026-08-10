@@ -12,10 +12,11 @@ namespace OppAssiment2
         private decimal Weight;
         private decimal DeliveryFee;
         private  DeliveryAddress Destination;
+        
 
 
 
-  
+
 
         public string trackingCode
         {
@@ -70,11 +71,15 @@ namespace OppAssiment2
             }
         }
 
-        public decimal EstimatedCost
+
+        public DeliveryAddress destination { get; set; }
+        public virtual decimal EstimatedCost
         {
             get { return DeliveryFee + (Weight * 5); }
         }
 
+
+    
         //Constructors
         public Shipment(string trackingCode)
         {
@@ -116,9 +121,9 @@ namespace OppAssiment2
         }
 
 
-        public void PrintShipment()
+        public  virtual void PrintShipment()
         {
-            Console.WriteLine($"TrackingCode :{TrackingCode}\n Description:{Description}\n Weight:{Weight}KG\n DeliveryFee:{DeliveryFee} EGP\n Destination:{Destination}\n Cost:{EstimatedCost}");
+            Console.WriteLine($"TrackingCode :{TrackingCode}\n Description:{Description}\n Weight:{Weight}KG\n DeliveryFee:{DeliveryFee} EGP\n Cost:{EstimatedCost}");
         }
 
 

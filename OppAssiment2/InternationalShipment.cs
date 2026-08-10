@@ -48,11 +48,21 @@ namespace OppAssiment2
 
 
 
-        public decimal EstimatedCost
+        public override decimal EstimatedCost
         {
-            get { return base.deliveryFee + (base.weight * 5) + CustomsFee; }
+            get { return deliveryFee + (weight * 5) + CustomsFee; }
         }
 
+        public override void PrintShipment()
+        {
+            Console.WriteLine("InternationalShipment");
+            Console.WriteLine($"TrackingCode :{trackingCode}\n Description:{description}\n Weight:{weight}KG\n CustomsFee:{CustomsFee}\n DeliveryFee:{deliveryFee} EGP\n Cost:{EstimatedCost}");
+        }
+
+        public virtual void GenerateCustomsReport()
+        {
+            Console.WriteLine("International Customs Report");
+        }
 
     }
 }
