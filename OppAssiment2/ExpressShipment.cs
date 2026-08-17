@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OppAssiment2
 {
-    internal class ExpressShipment:Shipment
+    internal class ExpressShipment:Shipment,ITrackable,IInsurable
     {
       private  decimal ExtraFee;
 
@@ -42,5 +42,19 @@ namespace OppAssiment2
 
             Console.WriteLine($"TrackingCode :{trackingCode}\n Description:{description}\n Weight:{weight}KG\n ExtraFee:{ExtraFee}\n DeliveryFee:{deliveryFee} EGP\n Cost:{EstimatedCost}");
         }
+
+
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} has been Delivered.";
+        }
+
+
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.08m;
+        }
+
+
     }
 }

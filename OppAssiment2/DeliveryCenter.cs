@@ -93,5 +93,26 @@ namespace OppAssiment2
             shipment.PrintShipment();
         }
 }
+
+       public void PrintTrackingStatuses()
+        {
+            foreach (ITrackable shipment in shipments)
+            {
+               Console.WriteLine( shipment.GetTrackingStatus());
+
+            }
+        }
+
+
+        public void PrintIInsurableStatuses()
+        {
+            foreach (IInsurable shipment in shipments)
+            {
+                Console.WriteLine(shipment.CalculateInsurance());
+
+            }
+        }
+
+
     }
 }

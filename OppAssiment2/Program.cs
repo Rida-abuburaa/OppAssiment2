@@ -115,7 +115,7 @@ namespace OppAssiment2
 
 
             #region Assiment 3 Part 01 — Theoretical Questions
-       
+
             // Q1 Overloading, Overriding, and Binding
             //a)  What is the difference between Method Overloading and Method Overriding?
             /* Overloading:
@@ -136,15 +136,15 @@ namespace OppAssiment2
                  - Common with method overloading.
                  - Based on declared type / arguments.
                  - Faster / early decision.*/
-          /*  Dynamic Binding:
-                -Decided at runtime.
-                -Common with method overriding.
-                - Based on actual object type.
-                -Runtime decision.*/
+            /*  Dynamic Binding:
+                  -Decided at runtime.
+                  -Common with method overriding.
+                  - Based on actual object type.
+                  -Runtime decision.*/
 
 
 
-        #endregion
+            #endregion
 
             #region Assiment3 practical****************************************************************************************************************
 
@@ -191,6 +191,61 @@ namespace OppAssiment2
 
 
             #endregion
+
+
+            DeliveryAddress address1 = new DeliveryAddress("Cairo", "reda123", 234);
+            DeliveryCenter deliveryCenter = new DeliveryCenter();
+            StandardShipment st1 = new StandardShipment("2001","Laptop",12,10, address1);
+            ExpressShipment ex1 = new ExpressShipment("3001", "glasses", 4m, 32m, address1, 5m);
+            InternationalShipment inr1 = new InternationalShipment("1001", "Glasses", 22m, 21m, address1, 23m);
+
+            deliveryCenter.AddShipment(st1);
+            deliveryCenter.AddShipment(ex1);
+            deliveryCenter.AddShipment(inr1);
+
+            Shipment[] shipments =
+            {
+              st1,
+              ex1,
+              inr1
+             };
+
+            foreach (Shipment shipment in shipments)
+            {
+                shipment.PrintShipment();
+                Console.WriteLine("==========================================");
+               
+            }
+            ITrackable[] trackableShipments =
+            {
+              st1,
+              ex1,
+              inr1
+            };
+            Console.WriteLine("Tracking Status");
+            foreach (ITrackable shipment in trackableShipments)
+            {
+               
+                Console.WriteLine(shipment.GetTrackingStatus());
+                
+            }
+            IInsurable[] insurableShipments =
+            {
+                st1,
+                ex1,
+                inr1
+
+            };
+            Console.WriteLine("==========================================");
+            Console.WriteLine("Insurance");
+            
+                Console.WriteLine($"Standard Shipment Insurance : {st1.CalculateInsurance():F2} EGP");
+                Console.WriteLine($"Express Shipment Insurance : {ex1.CalculateInsurance():F2} EGP");
+                Console.WriteLine($"International Shipment Insurance : {inr1.CalculateInsurance():F2} EGP"); 
+            
+            Console.WriteLine("==========================================");
+            Console.WriteLine("Interface Polymorphism Demonstrated Successfully.");
+
         }
     }
 }

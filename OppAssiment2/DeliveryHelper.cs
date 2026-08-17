@@ -10,8 +10,8 @@ namespace OppAssiment2
         {
             shipment.PrintShipment();
         }
-        public sealed class CompletedShipment : Shipment
-        {
-        }
+       // public sealed class CompletedShipment : Shipment
+        //{
+       // }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OppAssiment2
 {
-    internal class InternationalShipment:Shipment
+    internal class InternationalShipment:Shipment,ITrackable,IInsurable
     {
         private string DestinationCountry;
         private decimal CustomsFee;
@@ -63,6 +63,20 @@ namespace OppAssiment2
         {
             Console.WriteLine("International Customs Report");
         }
+
+
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode}is Out for Delivery.";
+        }
+
+
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.12m;
+        }
+
+
 
     }
 }

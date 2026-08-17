@@ -5,15 +5,15 @@ using System.Text;
 
 namespace OppAssiment2
 {
-    internal class Shipment
+    internal abstract class Shipment
     {
-        private string TrackingCode;
+        public string TrackingCode;
         private string Description;
-        private decimal Weight;
-        private decimal DeliveryFee;
+        public decimal Weight;
+        public decimal DeliveryFee;
         private  DeliveryAddress Destination;
-        
 
+        public abstract decimal EstimatedCost { get; }
 
 
 
@@ -73,10 +73,10 @@ namespace OppAssiment2
 
 
         public DeliveryAddress destination { get; set; }
-        public virtual decimal EstimatedCost
+       /* public virtual decimal EstimatedCost
         {
             get { return DeliveryFee + (Weight * 5); }
-        }
+        }*/
 
 
     
@@ -121,10 +121,13 @@ namespace OppAssiment2
         }
 
 
-        public  virtual void PrintShipment()
+        /*public  virtual void PrintShipment()
         {
             Console.WriteLine($"TrackingCode :{TrackingCode}\n Description:{Description}\n Weight:{Weight}KG\n DeliveryFee:{DeliveryFee} EGP\n Cost:{EstimatedCost}");
-        }
+        }*/
+
+        public abstract void PrintShipment();
+
 
 
     }

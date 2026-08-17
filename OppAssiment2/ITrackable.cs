@@ -4,7 +4,9 @@ using System.Text;
 
 namespace OppAssiment2
 {
-    //internal sealed class completedshipment:Shipment
-    //{
-   // }
+    internal interface ITrackable
+    {
+         string GetTrackingStatus();
+
+    }
 }
