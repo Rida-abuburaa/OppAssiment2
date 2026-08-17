@@ -1,9 +1,13 @@
 ﻿using OppAssiment2.Struct;
+using System.ComponentModel;
+using System.Diagnostics.Contracts;
 using System.Numerics;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Timers;
 using static OppAssiment2.DeliveryHelper;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OppAssiment2
 {
@@ -192,7 +196,7 @@ namespace OppAssiment2
 
             #endregion
 
-
+            #region practical OOP04 
             DeliveryAddress address1 = new DeliveryAddress("Cairo", "reda123", 234);
             DeliveryCenter deliveryCenter = new DeliveryCenter();
             StandardShipment st1 = new StandardShipment("2001","Laptop",12,10, address1);
@@ -245,6 +249,51 @@ namespace OppAssiment2
             
             Console.WriteLine("==========================================");
             Console.WriteLine("Interface Polymorphism Demonstrated Successfully.");
+            #endregion
+
+
+
+            #region OOP04 Theoretical
+
+
+            //a)  What is Abstraction in Object-Oriented Programming?
+            //Abstraction is the process of hiding unnecessary implementation details and showing only the essential features of an object.
+            //b)  Why is abstraction considered one of the four pillars of OOP?
+            //Hide complex implementation details.
+            // Reduce unnecessary code complexity.
+            //Make programs easier to understand and maintain.
+            //Define a common structure that different classes can follow.
+
+            // a)  What is the difference between an Abstract Class and an Interface?  
+            //Abstract Class:
+            // Used as a base class for related classes.
+            // Can contain fields, properties, constructors, and methods.
+            //Can contain methods with actual implementation.
+            //A class can inherit from only one abstract class Used to share common data and code.
+            //Interface:
+            //Defines a contract that a class must follow.
+            //Mainly defines methods and properties that the class must implement.
+            //A class can implement multiple interfaces.
+            //Used to define what a class can do.
+
+
+            //b)  When would you choose an Interface instead of an Abstract Class?
+
+            //Choose an Interface when you want to define a common behavior or capability that different classes can have.
+            //Use an Interface when unrelated classes need to follow the same contract.
+            //Use an Interface when a class needs to implement multiple behaviors, because a class can implement multiple interfaces.
+            //An Interface is useful when you only need to specify what a class must do, not share common data or implementation.
+
+
+            //c)  Can a class inherit from multiple abstract classes? Can it implement multiple interfaces?
+            // No. A class can inherit from only one abstract class (or one base class) in C#.
+            //Yes. A class can implement multiple interfaces.
+
+            #endregion
+
+
+
+
 
         }
     }
