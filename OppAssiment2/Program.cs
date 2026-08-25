@@ -197,7 +197,7 @@ namespace OppAssiment2
             #endregion
 
             #region practical OOP04 
-            /*  DeliveryAddress address1 = new DeliveryAddress("Cairo", "reda123", 234);
+             DeliveryAddress address1 = new DeliveryAddress("Cairo", "reda123", 234);
               DeliveryCenter deliveryCenter = new DeliveryCenter();
               StandardShipment st1 = new StandardShipment("2001","Laptop",12,10, address1);
               ExpressShipment ex1 = new ExpressShipment("3001", "glasses", 4m, 32m, address1, 5m);
@@ -255,7 +255,7 @@ namespace OppAssiment2
 
               #region OOP04 Theoretical
 
-
+            /*
               //a)  What is Abstraction in Object-Oriented Programming?
               //Abstraction is the process of hiding unnecessary implementation details and showing only the essential features of an object.
               //b)  Why is abstraction considered one of the four pillars of OOP?
@@ -377,10 +377,10 @@ namespace OppAssiment2
             //Make maintenance and development easier.
 
             //c) What is a Partial Method?
-              // A partial method is a method that can be declared in one part of a partial class and optionally implemented in another part of the same class.
+            // A partial method is a method that can be declared in one part of a partial class and optionally implemented in another part of the same class.
 
-           // d) What happens if a declared partial method has no implementation?
-              //If a partial method is declared but not implemented, it can be removed by the compiler, so it has no effect on the compiled program.
+            // d) What happens if a declared partial method has no implementation?
+            //If a partial method is declared but not implemented, it can be removed by the compiler, so it has no effect on the compiled program.
 
 
             #endregion
@@ -388,6 +388,18 @@ namespace OppAssiment2
 
 
 
+            #region
+           /* Shipment p1 = new Shipment(1001,"laptop",10,19,new DeliveryAddress("cairo","alkarim",1002));
+
+
+            Shipment p2 = p1;              // Reference copy
+            Shipment p3 = p3.CopyShipment(); // Actual copy
+
+            Console.WriteLine(p1);
+
+            Console.WriteLine(p2);
+            Console.WriteLine(p3);*/
+            #endregion
 
 
         }

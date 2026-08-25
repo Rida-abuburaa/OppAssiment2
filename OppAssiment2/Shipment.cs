@@ -128,6 +128,15 @@ namespace OppAssiment2
 
         public abstract void PrintShipment();
 
+        public Shipment CopyShipment()
+        {
+            return new Shipment
+            {
+                TrackingNumber = this.TrackingNumber,
+                Destination = this.Destination,
+                Weight = this.Weight
+            };
+        }
 
 
     }
